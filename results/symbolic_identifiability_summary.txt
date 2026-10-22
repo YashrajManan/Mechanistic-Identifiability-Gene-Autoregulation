@@ -1,0 +1,9 @@
+Model A steady-state relation: alpha = gamma*x*(K**n + x**n)/K**n
+Model B steady-state relation: alpha = gamma*x*(K**n + x**n)/K**n
+Symbolic difference (steady state): 0
+
+Model A linearization at steady state: gamma*(-K**n - n*x**n - x**n)/(K**n + x**n)
+Model B linearization at steady state: gamma*(-K**n - n*x**n - x**n)/K**n
+lamA (numeric, xstar=1.2): -3.698594
+lamB (numeric, xstar=1.2): -11.368000
+Fitted rateA: -3.701147   Fitted rateB: -11.352464
