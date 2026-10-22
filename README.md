@@ -27,9 +27,7 @@ concrete pair of real biological mechanisms.
 
 ## 3. Data fetch
 
-None — a deliberate, disclosed exception to this portfolio's usual API-first-data convention, the same
-category as #23B and #23D. The two candidate ODE models and their mathematical comparison are the object
-of study; there is no dataset to fetch for the core result.
+--NOT APPLICABLE--
 
 ## 4. Data describe
 
