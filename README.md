@@ -27,9 +27,12 @@ concrete pair of real biological mechanisms.
 
 ## 3. Data fetch
 
-None — a deliberate, disclosed exception to this portfolio's usual API-first-data convention, the same
-category as #23B and #23D. The two candidate ODE models and their mathematical comparison are the object
-of study; there is no dataset to fetch for the core result.
+None required for the core result: this project's entire point is a mathematical non-identifiability
+proof — showing two mechanistically different models produce provably identical steady-state behavior. That
+claim has to be established symbolically and then checked against simulated data with a fully known
+ground-truth mechanism; a real dataset couldn't settle which mechanism actually generated it, which is
+exactly the problem under study. The two candidate ODE models and their derived comparison are the real
+object of study here.
 
 ## 4. Data describe
 
@@ -91,11 +94,11 @@ which mechanism is operating.
 
 ## 8. Learning through project
 
-An implicit/stiff-aware ODE solver (`Radau`) is not a drop-in replacement for an explicit one (`RK45`): its
-internal finite-difference Jacobian estimator expects the model's right-hand-side function to always return
-an array-like object, even for a 1-dimensional system, crashing with an opaque `IndexError` when given a
-bare scalar — caught during this project's own pre-build verification before it ever reached a live run.
-Reporting that two models are "indistinguishable" is a much weaker claim when based only on fitting both to
+An implicit/stiff-aware ODE solver is not always a drop-in replacement for an explicit one — internal
+assumptions about a model function's return type can differ between solver families in ways that only
+surface as an opaque low-level error, worth checking directly against a solver's own interface
+expectations during pre-build verification rather than assumed from a shared high-level API. Reporting that
+two models are "indistinguishable" is a much weaker claim when based only on fitting both to
 one noisy dataset than when proven structurally, in closed form, for every parameter value — the difference
 between a data-specific observation and a mathematical guarantee is itself a real, transferable modeling
 lesson. Finally, pairing a non-identifiability finding with a separate, complementary identifiability check
